@@ -458,7 +458,8 @@
       EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
       EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
   */
-    window.onload = () => {
+    window.onload = function() {
+
       function EX11(){
         let navbarNode = document.querySelector('nav')
         let linkElem = document.createElement('a')
@@ -494,11 +495,19 @@
          firstP.innerText = firstP.innerText.substr(0,50)
         })
       }
-      /*
+      
       ;(function EX18 () {
         newBtn = document.querySelector('.blog-pagination > .btn:nth-child(2)')
+        newBtn.classList.remove('disabled')
         newBtn.addEventListener('click' , function(e){
-          document.querySelector('.blog-pagination > .btn:nth-child(2)')
+          let main = document.querySelector(".blog-main")
+          let h2 = document.createElement('h2')
+          h2.classList.add('blog-post-title')
+          h2.innerText = "new H2 Ex18"
+          let blogPost = document.createElement('div')
+          blogPost.classList.add('blog-post')
+          blogPost.append(h2)
+          main.insertBefore(blogPost , document.querySelector(".blog-pagination"))
         })
 
       })()
@@ -507,7 +516,7 @@
         oldBtn = newBtn = document.querySelector('.blog-pagination > .btn:nth-child(1)')
       })()
 
-      */
+      
     }
   </script>
 
