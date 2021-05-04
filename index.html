@@ -46,38 +46,45 @@
             EX10) Write a selector to target the footer
         */
 
-        h1{
-          background-color: var(--red);
-        }
-        navbar > *{
-          background-color: var(--dark-orange);
-        }
-        .jumbotron a:last-child{
-          background-color: var(--cyber-yellow);
-        }
-        div.blog-post:first-of-type{
-          background-color: var(--chartreuse-traditional);
-        }
-        nav a:nth-of-type(even){
-          background-color: var(--spring-bud);
-        }
-        div.blog-post:last-of-type{
-          background-color: var(--medium-spring-green);
-        }
-        .blog-sidebar > .p4:first-of-type > ol > li {
-          background-color: var(--electric-blue);
-        }
-        div.blog-post:nth-child(3) > p:nth-child(2) > a:nth-child(1) {
-          background-color: var(--azure);
-        }
-        body > *:nth-child(3) > p:last-child > a{
-          background-color: var(--han-purple);
-        }
-        footer{
-          background-color: var(--electric-purple);
-        }
+    h1 {
+      background-color: var(--red);
+    }
 
+    navbar>* {
+      background-color: var(--dark-orange);
+    }
 
+    .jumbotron a:last-child {
+      background-color: var(--cyber-yellow);
+    }
+
+    div.blog-post:first-of-type {
+      background-color: var(--chartreuse-traditional);
+    }
+
+    nav a:nth-of-type(even) {
+      background-color: var(--spring-bud);
+    }
+
+    div.blog-post:last-of-type {
+      background-color: var(--medium-spring-green);
+    }
+
+    .blog-sidebar>.p4:first-of-type>ol>li {
+      background-color: var(--electric-blue);
+    }
+
+    div.blog-post:nth-child(3)>p:nth-child(2)>a:nth-child(1) {
+      background-color: var(--azure);
+    }
+
+    body>*:nth-child(3)>p:last-child>a {
+      background-color: var(--han-purple);
+    }
+
+    footer {
+      background-color: var(--electric-purple);
+    }
   </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -451,6 +458,34 @@
       EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
       EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
   */
+    window.onload = () => {
+      function EX11(){
+        let navbarNode = document.querySelector('nav')
+        let linkElem = document.createElement('a')
+        linkElem.classList.add('p-2')
+        linkElem.classList.add('text-muted') 
+        linkElem.setAttribute('href',"google.it")
+        linkElem.innerText = "EX11 Google link"
+        navbarNode.append(linkElem);
+      }
+
+      function EX12( color ){
+        let titleNode = document.querySelector('h1')
+        titleNode.style.color = color
+      }
+      function EX13( color ){
+        let jumbotronNode = document.querySelector('.jumbotron')
+        jumbotronNode.style.backgroundColor = color
+      }
+      function EX14(  ){
+        let olNode = document.querySelectorAll('.list-unstyled')[1]
+        ;[... olNode.childNodes ].forEach( elem => elem.remove() )
+      }
+      function EX15( size ){
+        let blogHarr = [... document.querySelectorAll('.blog-post h2') ]
+        blogHarr.forEach( elem => elem.style.columnWidth = size )
+      }
+    }
   </script>
 
 
