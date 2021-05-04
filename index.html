@@ -485,6 +485,15 @@
         let blogHarr = [... document.querySelectorAll('.blog-post h2') ]
         blogHarr.forEach( elem => elem.style.columnWidth = size )
       }
+      function EX16 (){
+        document.querySelector('svg').remove()
+      }
+      function EX17 (){
+        [... document.querySelectorAll('.blog-post') ].forEach( elem => {
+         let firstP = elem.querySelectorAll('p:not([class])')[0] 
+         firstP.innerText = firstP.innerText.substr(0,50)
+        })
+      }
     }
   </script>
 
