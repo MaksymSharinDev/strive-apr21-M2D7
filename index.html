@@ -513,7 +513,13 @@
       })()
 
       ;( function EX19 () {
-        oldBtn = newBtn = document.querySelector('.blog-pagination > .btn:nth-child(1)')
+        oldBtn = document.querySelector('.blog-pagination > .btn:nth-child(1)')
+        oldBtn.addEventListener('click' , function(e){
+          let blogPosts = [...document.querySelectorAll(".blog-main > .blog-post")] 
+          elem = blogPosts.pop()
+          elem.remove()
+        })
+
       })()
 
       
